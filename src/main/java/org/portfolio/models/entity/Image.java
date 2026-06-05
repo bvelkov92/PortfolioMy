@@ -6,26 +6,12 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table
 @Entity
+@Table(name="images")
 @Getter
 @NoArgsConstructor
-public class User extends BaseEntity {
+public class Image extends BaseEntity {
 
     @Column
-    private String username;
-
-    @Column
-    private String password;
-
-    @Column
-    private String email;
-
-    @Column
-    private int age;
-
-    @Column
-    private String city;
-
-
+    private String imageName;
 }
