@@ -1,10 +1,9 @@
 package org.portfolio.service.serviceAnotations;
-
-import lombok.Getter;
-import lombok.Setter;
+import org.portfolio.models.dto.user.UserRegisterDTO;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService {
 
+    void registerNewUser(UserRegisterDTO userRegisterDTO);
 }
