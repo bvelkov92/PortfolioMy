@@ -1,6 +1,7 @@
 package org.portfolio.controller;
 
 import jakarta.validation.Valid;
+import org.portfolio.models.dto.user.UserLoginDTO;
 import org.portfolio.models.dto.user.UserRegisterDTO;
 import org.portfolio.service.serviceAnotations.UserService;
 import org.springframework.stereotype.Controller;
@@ -24,10 +25,19 @@ public class UserController {
         return "index";
     }
 
+    @GetMapping("/login")
+    public String getLogin(Model model){
+        if (!model.containsAttribute("userLoginDTO")){
+            model.addAttribute("userLoginDTO", new UserLoginDTO());
+        }
+        return "login";
+    }
+
+
     @GetMapping("/reg")
     public String getRegister(Model model){
         if (!model.containsAttribute("userRegisterDTO")){
-            model.addAttribute("userRegisterDTO", UserRegisterDTO.class);
+            model.addAttribute("userRegisterDTO", new UserRegisterDTO());
         }
         return "register";
     }
