@@ -24,13 +24,7 @@ public class LoginAndLogoutConfigurator {
                                 .usernameParameter("username")
                                 .passwordParameter("password")
                                 .defaultSuccessUrl("/", true)
-                                .failureHandler((request, response, exception) -> {
-                                    if (exception instanceof LockedException) {
-                                        response.sendRedirect("/login?banned");
-                                    } else {
-                                        response.sendRedirect("/login?error");
-                                    }
-                                }))
+                                )
                 .logout(formLogout->
                         formLogout.logoutUrl("/logout")
                                 .logoutSuccessUrl("/")

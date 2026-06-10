@@ -56,4 +56,20 @@ public class UserController {
 
         return "redirect:/";
     }
+
+    @GetMapping("/resume")
+    public String getResume(){
+        return "resume";
+    }
+
+
+    @GetMapping("/projects")
+    public String getProjects(){
+        return "projects";
+    }
+
+    @GetMapping("/contact")
+    public String getContact(){
+        return "contact";
+    }
 }
