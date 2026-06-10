@@ -1,6 +1,7 @@
 package org.portfolio.models.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,11 +12,13 @@ import java.util.Date;
 @Table
 @Getter
 @Setter
-public class Messages {
+public class Messages extends BaseEntity {
 
-    private String sender;
+    @ManyToOne
+    private User sender;
 
-    private String receiver;
+    @ManyToOne
+    private User receiver;
 
     private String message;
 
