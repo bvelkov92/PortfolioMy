@@ -19,9 +19,7 @@ public class UserRegisterDTO {
 
     private String password;
     private String confirmPassword;
-
     private int age;
-
     private String city;
 
 }
